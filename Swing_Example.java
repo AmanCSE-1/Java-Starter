@@ -81,6 +81,36 @@ class Swing_Example extends JFrame implements ActionListener {
             System.exit(0);
         }
     } 
+    
+    void start() {
+        b2.setEnabled(true);
+        if (current==0) {
+            b2.setEnabled(false);
+            lb.setText("Who is the Prime Minister of India ?");
+            jb[0].setText("Rahul Gandhi");
+            jb[1].setText("Narendra Modi");
+            jb[2].setText("Amit Shah");
+            jb[3].setText("Manmohan Singh");
+        }
+
+        if (current==1) {
+            lb.setText("Who won the ICC ODI WC 2019 ?");
+            jb[0].setText("India");
+            jb[1].setText("Australia");
+            jb[2].setText("England");
+            jb[3].setText("New Zealand");
+        }
+
+        if (current==2) {
+            b.setEnabled(false);
+            lb.setText("Who is the fifth richest person in the world ?");
+            jb[0].setText("Mukesh Ambani");
+            jb[1].setText("Mark Zukenberg");
+            jb[2].setText("Steve Jobs");
+            jb[3].setText("Elon Musk");
+        }
+        number.setText("Question No. : " + (current+1) +" of 3");
+    }
 
     
     public static void main(String []args) {
