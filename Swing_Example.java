@@ -58,6 +58,29 @@ class Swing_Example extends JFrame implements ActionListener {
         add(number);
         start();
     }
+    
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==b) {
+            if (check())
+                count=count+1;
+            current++;
+            start();
+
+        }
+        
+        else if(e.getSource()==b2) {
+            count=0;
+            current=0;
+            start();
+        }
+
+        if (e.getActionCommand().equals("Submit")) {
+            if (check())
+                count=count+1;
+            JOptionPane.showMessageDialog(this, "Percentage Obtained : " +(count/3.0)*100 +"%");
+            System.exit(0);
+        }
+    } 
 
     
     public static void main(String []args) {
