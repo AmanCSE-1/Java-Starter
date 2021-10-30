@@ -4,7 +4,7 @@ import java.awt.event.*;
 public class AwtTest extends Frame implements ItemListener {
     Label lb;
     CheckboxGroup options;
-    Checkbox a1;
+    Checkbox a1,a2;
 
     public AwtTest(){
         setTitle("AwtTest Example");
@@ -31,8 +31,17 @@ public class AwtTest extends Frame implements ItemListener {
         options = new CheckboxGroup();
         a1= new Checkbox("Mumbai",options,false);
         a1.setBounds(80, 80, 80, 30);
+        a2= new Checkbox("Chennai",options,false);
+        a2.setBounds(80, 110,80, 30);
 
         a1.addItemListener(new ItemListener(){
+            public void itemStateChanged(ItemEvent e) {
+                status.setBackground(Color.RED);
+                status.setText(" Your Answer is Incorrect");
+            }
+        });
+        
+        a2.addItemListener(new ItemListener(){
             public void itemStateChanged(ItemEvent e) {
                 status.setBackground(Color.RED);
                 status.setText(" Your Answer is Incorrect");
@@ -43,6 +52,7 @@ public class AwtTest extends Frame implements ItemListener {
         add(status);
         add(lb);
         add(a1);
+        add(a2);
 
         }
 
