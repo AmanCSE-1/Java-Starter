@@ -111,6 +111,16 @@ class Swing_Example extends JFrame implements ActionListener {
         }
         number.setText("Question No. : " + (current+1) +" of 3");
     }
+    
+    boolean check() {
+        if (current==0)
+            return (jb[1].isSelected());
+        else if (current==1)
+            return (jb[2].isSelected());
+        else if (current==2)
+            return (jb[0].isSelected());
+        return false;
+    }
 
     
     public static void main(String []args) {
