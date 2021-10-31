@@ -62,6 +62,35 @@ public class Calculator extends Frame implements ActionListener {
         add(tf); add(tf2); add(b1); add(b2);
         add(b3); add(b4); add(b5); add(lb);
     }
+    
+    public void actionPerformed(ActionEvent e) {
+        String s1 = tf.getText();
+        String s2 = tf2.getText();
+        
+        double a = Double.parseDouble(s1);
+        double b = Double.parseDouble(s2);
+        double c = 0;
+
+        if (e.getSource()==b1) 
+            c = a+b;
+        else if (e.getSource()==b2) 
+            c = a-b;
+        else if (e.getSource()==b3)
+            c = a*b;
+        else if (e.getSource()==b4)
+            c = a/b;
+        else if (e.getSource()==b6)
+            c = a%b;
+        
+        else if (e.getSource()==b5) {
+            tf.setText("");
+            tf2.setText("");
+        }
+        
+        DecimalFormat df = new DecimalFormat("#.##");
+        String result = df.format(c);
+        lb.setText(result);
+    }
 
     
     public static void main(String []args) {
